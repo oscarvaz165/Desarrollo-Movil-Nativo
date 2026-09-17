@@ -1,5 +1,4 @@
 package com.example.hola
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -37,9 +36,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun SaludoScreen() {
-    // Estado del texto que escribe el usuario
+
     var nombre by remember { mutableStateOf("") }
-    // Estado del saludo que se muestra
     var saludo by remember { mutableStateOf("") }
 
     Column(
@@ -49,7 +47,6 @@ fun SaludoScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Campo de entrada de texto (EditText)
         OutlinedTextField(
             value = nombre,
             onValueChange = { nombre = it },
@@ -57,10 +54,7 @@ fun SaludoScreen() {
             modifier = Modifier.fillMaxWidth()
         )
 
-        // Espacio
         androidx.compose.foundation.layout.Spacer(modifier = Modifier.padding(8.dp))
-
-        // Botón
         Button(
             onClick = {
                 saludo = if (nombre.isNotBlank()) {
@@ -74,10 +68,7 @@ fun SaludoScreen() {
             Text("Saludar")
         }
 
-        // Espacio
         androidx.compose.foundation.layout.Spacer(modifier = Modifier.padding(8.dp))
-
-        // Etiqueta de texto (TextView) que muestra el saludo dinámico
         Text(
             text = saludo,
             style = MaterialTheme.typography.headlineSmall
