@@ -58,7 +58,7 @@ fun SaludoScreen() {
         Button(
             onClick = {
                 saludo = if (nombre.isNotBlank()) {
-                    "¡Hola, $nombre! Bienvenido/a 👋"
+                    "¡Hola, $nombre! Bienvenido"
                 } else {
                     "Por favor escribe tu nombre"
                 }
